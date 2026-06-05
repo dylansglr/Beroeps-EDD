@@ -5,12 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Back to the Future</title>
     <link rel="stylesheet" href="style.css">
+  
 </head>
 <body>
-    <div id="boven" >
-        Datum : 
-    
+<div id="boven">
+  <div class="speedometer">
+        <div class="needle" id="needle"></div>
+        <div class="center"></div>
+        <div class="speed" id="speed">0 km/u</div>
     </div>
-    <hr>
+
+    <input
+        type="range"
+        min="0"
+        max="500"
+        value="0"
+        id="slider"
+        class="slider">
+</div>
+</div>
+<script src="script.js"></script>
 </body>
 </html>
