@@ -1,29 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Back to the Future</title>
+    <title>Back To The Future Dashboard</title>
     <link rel="stylesheet" href="style.css">
-  
 </head>
 <body>
-<div id="boven">
-  <div class="speedometer">
-        <div class="needle" id="needle"></div>
-        <div class="center"></div>
-        <div class="speed" id="speed">0 km/u</div>
+
+<div class="dashboard">
+
+    <div class="panel speedometer">
+        <div class="title">Speedometer</div>
+        <div class="speed-circle">88</div>
     </div>
-<h1> Diego us gay </h1>
-    <input
-        type="range"
-        min="0"
-        max="500"
-        value="0"
-        id="slider"
-        class="slider">
+
+    <div class="panel destination">
+        <div class="title">Destination Time</div>
+
+        <div class="time-display">
+            <div class="time-box">NOV</div>
+            <div class="time-box">05</div>
+            <div class="time-box">1955</div>
+            <div class="time-box">12</div>
+            <div class="time-box">00</div>
+        </div>
+    </div>
+
+    <div class="panel map">
+        <div class="title">Map</div>
+    </div>
+
+    <div class="panel info">
+        <div class="title">Info</div>
+
+        <ul>
+            <li>> Flux Capacitor: Standby</li>
+            <li>> Time Circuits Online</li>
+            <li>> Destination Set</li>
+            <li>> Road Clear</li>
+        </ul>
+    </div>
+
+    <div class="panel present">
+        <div class="title">Present Time</div>
+
+        <div class="time-display">
+            <div class="time-box green">JUN</div>
+            <div class="time-box green">17</div>
+            <div class="time-box green">2026</div>
+            <div class="time-box green">13</div>
+            <div class="time-box green">45</div>
+        </div>
+    </div>
+
+    <div class="panel pedals">
+        <div class="title">Brake / Gas</div>
+
+        <div class="pedal-container">
+            <div class="pedal"></div>
+            <div class="pedal"></div>
+        </div>
+    </div>
+
+    <div class="panel keypad">
+        <div class="title">Tijdreis Bestemming</div>
+
+        <div class="keypad-grid">
+            <div class="key">1</div>
+            <div class="key">2</div>
+            <div class="key">3</div>
+            <div class="key">4</div>
+            <div class="key">5</div>
+            <div class="key">6</div>
+            <div class="key">7</div>
+            <div class="key">8</div>
+            <div class="key">9</div>
+        </div>
+    </div>
+
+    <div class="panel lights">
+        <div class="title">Ready</div>
+
+        <div class="light-box">
+            <div class="light red"></div>
+            <div class="light yellow"></div>
+            <div class="light green-light"></div>
+        </div>
+    </div>
+
+    <div class="panel flux">
+        <div class="title">Flux Capacitor</div>
+        <h2>1.21 GIGAWATTS</h2>
+    </div>
+
 </div>
-</div>
-<script src="script.js"></script>
+
 </body>
 </html>
