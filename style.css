@@ -1,4 +1,6 @@
-*{
+
+
+    *{
     margin:0;
     padding:0;
     box-sizing:border-box;
@@ -242,4 +244,75 @@ body{
     color:orange;
     font-size:2rem;
     text-align:center;
+}
+@keyframes warpMove {
+    from {
+        transform: translateY(0) skewX(-20deg);
+    }
+    to {
+        transform: translateY(120vh) skewX(-20deg);
+        opacity: 0;
+    }
+}
+
+/* CHOICE MODAL */
+
+#choiceModal{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    background:rgba(0,0,0,0.9);
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    z-index:99999;
+}
+
+.choice-box{
+    background:#111;
+    border:2px solid cyan;
+    border-radius:20px;
+    padding:50px;
+
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+
+    text-align:center;
+
+    box-shadow:
+        0 0 20px cyan;
+}
+
+.choice-box h2{
+    color:white;
+    font-size:2rem;
+}
+
+.choice-box button{
+    padding:20px 40px;
+    font-size:1.2rem;
+
+    background:black;
+    color:cyan;
+
+    border:2px solid cyan;
+    border-radius:15px;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.choice-box button:hover{
+    background:cyan;
+    color:black;
+
+    box-shadow:
+        0 0 25px cyan;
 }

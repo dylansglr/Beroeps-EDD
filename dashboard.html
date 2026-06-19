@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Back To The Future Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="dashboard">
+
+    <div class="panel speedometer">
+        <div class="title">Speedometer</div>
+        <div class="speed-circle">0</div>
+    </div>
+
+    <div class="panel destination">
+        <div class="title">Destination Time</div>
+
+        <div class="time-display">
+            <div class="time-box">NOV</div>
+            <div class="time-box">05</div>
+            <div class="time-box">1955</div>
+            <div class="time-box">12</div>
+            <div class="time-box">00</div>
+        </div>
+    </div>
+
+    <div class="panel map">
+        <div class="title">Map</div>
+    </div>
+
+    <div class="panel info">
+        <div class="title">Info</div>
+
+        <ul>
+            <li>> Flux Capacitor: Standby</li>
+            <li>> Time Circuits Online</li>
+            <li>> Destination Set</li>
+            <li>> Road Clear</li>
+        </ul>
+    </div>
+
+    <div class="panel present">
+        <div class="title">Present Time</div>
+
+        <div class="time-display">
+            <div class="time-box green">JUN</div>
+            <div class="time-box green">17</div>
+            <div class="time-box green">2026</div>
+            <div class="time-box green">13</div>
+            <div class="time-box green">45</div>
+        </div>
+    </div>
+
+    <div class="panel pedals">
+        <div class="title">Brake / Gas</div>
+
+        <div class="pedal-container">
+            <div class="pedal"></div>
+            <div class="pedal"></div>
+        </div>
+    </div>
+
+    <div class="panel keypad">
+        <div class="title">Tijdreis Bestemming</div>
+
+        <div class="keypad-grid">
+            <div class="key">1</div>
+            <div class="key">2</div>
+            <div class="key">3</div>
+
+            <div class="key">4</div>
+            <div class="key">5</div>
+            <div class="key">6</div>
+
+            <div class="key">7</div>
+            <div class="key">8</div>
+            <div class="key">9</div>
+
+            <div></div>
+            <div class="key">0</div>
+            <div></div>
+        </div>
+    </div>
+
+    <div class="panel lights">
+        <div class="title">Ready</div>
+
+        <div class="light-box">
+            <div class="light red"></div>
+            <div class="light yellow"></div>
+            <div class="light green-light"></div>
+        </div>
+    </div>
+
+    <div class="panel flux">
+        <div class="title">Flux Capacitor</div>
+        <h2>1.21 GIGAWATTS</h2>
+    </div>
+
+    <div id="choiceModal">
+    <div class="choice-box">
+        <h2>What do you want to do?</h2>
+
+        <button id="timeTravelChoice">
+            TIME TRAVEL
+        </button>
+
+        <button id="driveChoice">
+            JUST DRIVING
+        </button>
+    </div>
+</div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
