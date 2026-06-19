@@ -115,6 +115,7 @@ body{
     align-items:center;
     color:orange;
     font-size:2rem;
+    font-weight:bold;
 }
 
 /* TIJD */
@@ -176,19 +177,37 @@ body{
 
 .keypad-grid{
     display:grid;
-    grid-template-columns:repeat(3,80px);
+    grid-template-columns:repeat(3,90px);
+    grid-template-rows:repeat(4,90px);
     gap:15px;
 }
 
 .key{
-    width:80px;
-    height:80px;
+    width:90px;
+    height:90px;
     border-radius:50%;
-    border:2px solid cyan;
+    border:3px solid cyan;
+    color:cyan;
+    background:#0a0a0a;
     display:flex;
     justify-content:center;
     align-items:center;
-    font-size:28px;
+    font-size:32px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+    box-shadow:
+        0 0 10px cyan,
+        inset 0 0 10px cyan;
+}
+
+.key:hover{
+    transform:scale(1.1);
+    background:cyan;
+    color:black;
+    box-shadow:
+        0 0 25px cyan,
+        0 0 50px cyan;
 }
 
 /* STOPLICHT */
@@ -222,4 +241,5 @@ body{
 .flux h2{
     color:orange;
     font-size:2rem;
+    text-align:center;
 }
