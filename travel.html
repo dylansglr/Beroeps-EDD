@@ -3,71 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Time Travel</title>
+<link rel="stylesheet" href="travel.css">   
+<script src="travel.js" defer></script>
 
-<style>
-body {
-    margin:0;
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
-    background:black;
-    color:cyan;
-    font-family:Arial, sans-serif;
-    overflow:hidden;
-}
-
-/* BACKGROUND GIF */
-.bg {
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:url("time-traveling-its-rucka.gif") center/cover no-repeat;
-    filter:brightness(0.6);
-    z-index:-1;
-}
-
-/* TEXT */
-#status {
-    font-size:3rem;
-    text-shadow:0 0 20px cyan;
-    animation:pulse 1s infinite;
-}
-
-#arrived {
-    margin-top:20px;
-    font-size:1.5rem;
-    opacity:0;
-    transition:1s;
-}
-
-/* BUTTON */
-button {
-    margin-top:30px;
-    padding:15px 25px;
-    font-size:1rem;
-    background:black;
-    color:cyan;
-    border:2px solid cyan;
-    cursor:pointer;
-    opacity:0;
-    transition:1s;
-}
-
-button:hover {
-    background:cyan;
-    color:black;
-}
-
-@keyframes pulse {
-    0% { transform:scale(1); }
-    50% { transform:scale(1.05); }
-    100% { transform:scale(1); }
-}
-</style>
 </head>
 
 <body>
@@ -80,30 +18,6 @@ button:hover {
 
 <button id="backBtn">RETURN TO DASHBOARD</button>
 
-<script>
-// GET DESTINATION
-const params = new URLSearchParams(window.location.search);
-const dest = params.get("dest") || "UNKNOWN";
-
-// AFTER 4 SEC → ARRIVAL SCREEN
-setTimeout(() => {
-
-    document.getElementById("status").textContent = "ARRIVED";
-
-    const arrived = document.getElementById("arrived");
-    arrived.textContent = "You've reached " + dest;
-    arrived.style.opacity = 1;
-
-    const btn = document.getElementById("backBtn");
-    btn.style.opacity = 1;
-
-}, 4500);
-
-// BACK BUTTON
-document.getElementById("backBtn").addEventListener("click", () => {
-    window.location.href = "dashboard.html";
-});
-</script>
 
 </body>
 </html>

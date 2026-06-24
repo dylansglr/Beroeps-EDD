@@ -71,10 +71,11 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
     driveBtn.addEventListener("click", () => {
-        choiceMade = true;
-        choiceModal.style.display = "none";
-        console.log("JUST DRIVING gekozen");
-    });
+    choiceMade = true;
+    choiceModal.style.display = "none";
+
+    window.location.href = "drive.html";
+});
 
     // -------------------------
     // PEDALS
