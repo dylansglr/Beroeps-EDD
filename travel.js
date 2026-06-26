@@ -1,7 +1,7 @@
 
 // GET DESTINATION
 const params = new URLSearchParams(window.location.search);
-const dest = params.get("dest") || "UNKNOWN";
+const dest = decodeURIComponent(params.get("dest") || "").trim();
 
 // AFTER 4 SEC → ARRIVAL SCREEN
 setTimeout(() => {
@@ -9,7 +9,7 @@ setTimeout(() => {
     document.getElementById("status").textContent = "ARRIVED";
 
     const arrived = document.getElementById("arrived");
-    arrived.textContent = "You've reached " + dest;
+    arrived.textContent = dest ? `You've reached ${dest}` : "No destination selected";
     arrived.style.opacity = 1;
 
     const btn = document.getElementById("backBtn");

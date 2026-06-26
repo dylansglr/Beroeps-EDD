@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let braking = false;
     let readyMode = false;
     let destination = "";
+    let destinationConfirmed = false;
 
     // -------------------------
     // DOM ELEMENTS
@@ -38,42 +39,28 @@ document.addEventListener("DOMContentLoaded", () => {
     choiceMade = true;
     choiceModal.style.display = "none";
 
-    const input = document.createElement("input");
-    input.placeholder = "NOV 05 1955 12:00";
-    input.style.position = "fixed";
-    input.style.top = "45%";
-    input.style.left = "50%";
-    input.style.transform = "translate(-50%, -50%)";
-    input.style.padding = "15px";
-    input.style.fontSize = "18px";
-    input.style.zIndex = "999999";
-
-    const btn = document.createElement("button");
-    btn.textContent = "ENGAGE";
-    btn.style.position = "fixed";
-    btn.style.top = "55%";
-    btn.style.left = "50%";
-    btn.style.transform = "translate(-50%, -50%)";
-    btn.style.padding = "10px 20px";
-    btn.style.zIndex = "999999";
-
-    document.body.appendChild(input);
-    document.body.appendChild(btn);
-
-    btn.addEventListener("click", () => {
-        destination = input.value;
-
-        input.remove();
-        btn.remove();
-
-        console.log("Destination:", destination);
-    });
+    // Focus direct op het Destination Time display
+    const firstInput = document.querySelector(".input-red");
+    if (firstInput) {
+        firstInput.focus();
+    }
+    destinationConfirmed = false;
+    const msg = document.getElementById("travelMessage");
+    if (msg) {
+        msg.textContent = "GO";
+        msg.disabled = false;
+        msg.style.opacity = "1";
+        msg.style.cursor = "pointer";
+    }
 });
 
     driveBtn.addEventListener("click", () => {
     choiceMade = true;
     choiceModal.style.display = "none";
+    const values = [...document.querySelectorAll(".input-red")]
+    .map(input => input.value.trim());
 
+destination = values.join(" ");
     window.location.href = "drive.html";
 });
 
@@ -243,6 +230,9 @@ const shake = setInterval(() => {
         clearInterval(shake);
         document.body.style.transform = "none";
 
+        if(!destinationConfirmed){
+            return;
+        }
         window.location.href =
             "travel.html?dest=" + encodeURIComponent(destination || "UNKNOWN");
     }
@@ -255,5 +245,32 @@ const shake = setInterval(() => {
         }
 
     }, 50);
+const inputs = document.querySelectorAll(".input-red");
+const message = document.getElementById("travelMessage");
 
+function checkDestination(){
+    const complete = [...inputs].every(input => input.value.trim() !== "");
+
+    // GO button is ALWAYS enabled
+    message.disabled = false;
+    message.style.opacity = "1";
+    message.style.cursor = "pointer";
+
+    // only reset confirmation when empty
+    if(!complete){
+        destinationConfirmed = false;
+    }
+}
+
+inputs.forEach(input=>{
+    input.addEventListener("input", checkDestination);
+});
+
+message.addEventListener("click", () => {
+    destination = [...inputs].map(i => i.value.trim()).join(" ");
+    destinationConfirmed = true;
+    message.textContent = "REACH 88 KM/H TO TIME TRAVEL";
+    message.disabled = true;
+    message.style.opacity = "1";
+});
 });
